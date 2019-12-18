@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+   - name: pull imagem do docker
+     docker_image:
+      name: shiromabruno/devops-python
+   
+   - name: iniciar container
+     docker_container:
+      name: devops-python
+      image: shiromabruno/devops-python
+      ports:
+       - "5000:5000"
